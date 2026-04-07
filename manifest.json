@@ -11,6 +11,6 @@
     "preload_dlls": ["lua54.dll"]
   },
   "description": "meta.description",
-  "repository": "https://github.com/skydimo/skydimo-plugins",
+  "repository": "https://github.com/Skydimo-Team/Extension.SignalRGB-Bridge",
   "license": "MIT"
 }
