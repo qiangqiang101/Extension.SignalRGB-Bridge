@@ -6,6 +6,7 @@
   "type": "extension",
   "language": "lua",
   "entry": "init.lua",
+  "page": "page/dist/index.html",
   "permissions": ["hardware:hid", "native", "system:info"],
   "native": {
     "preload_dlls": ["lua54.dll"]
