@@ -1,0 +1,22 @@
+# Runtime only needs the built extension page and bridge runtime assets.
+.git
+.DS_Store
+Thumbs.db
+*.tmp
+*.log
+
+reference/
+
+page/.gitignore
+page/index.html
+page/node_modules/
+page/src/
+page/public/
+page/package.json
+page/package-lock.json
+page/README.md
+page/eslint.config.js
+page/vite.config.ts
+page/tsconfig.json
+page/tsconfig.app.json
+page/tsconfig.node.json
