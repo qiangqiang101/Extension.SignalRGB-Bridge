@@ -1,6 +1,6 @@
 {
   "meta": {
-    "name": "SignalRGB Köprüsü",
-    "description": "SignalRGB cihaz betiklerini HID üzerinden Skydimo’ya köprüleyerek yüzlerce ek RGB cihaz desteği sağlar."
+    "name": "SignalRGB Script Driver (beta)",
+    "description": "SignalRGB cihaz betiklerini Skydimo'da çalıştırmak için QuickJS tabanlı bir SignalRGB uyumluluk sürücüsü. Hâlâ test aşamasında ve bazı cihazlarda takılma yaşanabilir."
   }
 }

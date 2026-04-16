@@ -1,6 +1,6 @@
 {
   "meta": {
-    "name": "SignalRGB 橋接",
-    "description": "透過 HID 將 SignalRGB 裝置腳本橋接至 Skydimo，支援數百種額外的 RGB 裝置。"
+    "name": "SignalRGB 腳本驅動器 (beta)",
+    "description": "基於 QuickJS 實作的 SignalRGB 到 Skydimo 驅動相容層，用於執行 SignalRGB 裝置腳本。目前仍在測試中，部分裝置可能會出現卡頓問題。"
   }
 }

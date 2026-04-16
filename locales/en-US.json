@@ -1,6 +1,6 @@
 {
     "meta": {
-        "name": "SignalRGB Bridge",
-        "description": "Bridges SignalRGB device scripts to Skydimo via HID, enabling support for hundreds of additional RGB devices."
+        "name": "SignalRGB Script Driver (beta)",
+        "description": "A QuickJS-based compatibility driver for running SignalRGB device scripts in Skydimo. Still in testing, and some devices may experience stuttering."
     }
 }

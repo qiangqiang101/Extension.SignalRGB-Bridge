@@ -1,8 +1,9 @@
 -------------------------------------------------------------------
--- SignalRGB Bridge Extension
+-- SignalRGB Script Driver Extension
 --
--- Bridges SignalRGB JS device scripts to the Skydimo lighting
--- engine. Thin entry point — all logic lives in lib/ modules.
+-- QuickJS-based compatibility driver for running SignalRGB
+-- device scripts in Skydimo. Thin entry point — all logic
+-- lives in lib/ modules.
 -------------------------------------------------------------------
 
 local utils     = require("lib.utils")
@@ -252,16 +253,16 @@ end
 local P = {}
 
 function P.on_start()
-    ext.log("[SRGB] SignalRGB Bridge starting")
+    ext.log("[SRGB] SignalRGB Script Driver (beta) starting")
 
     disabled_set = load_disabled_set()
 
-    ext.notify_persistent("srgb-scan", "SignalRGB Bridge",
+    ext.notify_persistent("srgb-scan", "SignalRGB Script Driver (beta)",
         "Scanning device scripts...")
     local results = scanner.scan_directory(scripts_dir(), function(msg)
         ext.debug(msg)
     end, function(current, total)
-        ext.notify_persistent("srgb-scan", "SignalRGB Bridge",
+        ext.notify_persistent("srgb-scan", "SignalRGB Script Driver (beta)",
             "Scanning device scripts... (" .. current .. "/" .. total .. ")")
     end)
     ext.dismiss_persistent("srgb-scan")
@@ -286,7 +287,7 @@ function P.on_start()
         .. errors .. " error(s), " .. skipped .. " disabled")
 
     local matched = discovery.discover_and_register(script_db)
-    ext.notify("SignalRGB Bridge",
+    ext.notify("SignalRGB Script Driver (beta)",
         total .. " scripts loaded, " .. matched .. " device(s) matched",
         matched > 0 and "success" or "info")
     emit_scripts_snapshot()
@@ -294,7 +295,7 @@ function P.on_start()
 end
 
 function P.on_stop()
-    ext.log("[SRGB] SignalRGB Bridge stopping")
+    ext.log("[SRGB] SignalRGB Script Driver (beta) stopping")
     device.remove_all()
     script_db = {}
     scan_results = {}
@@ -304,11 +305,11 @@ function P.on_stop()
 end
 
 function P.on_scan_devices()
-    ext.notify_persistent("srgb-scan", "SignalRGB Bridge", "Rescanning...")
+    ext.notify_persistent("srgb-scan", "SignalRGB Script Driver (beta)", "Rescanning...")
     local results = scanner.scan_directory(scripts_dir(), function(msg)
         ext.debug(msg)
     end, function(current, total)
-        ext.notify_persistent("srgb-scan", "SignalRGB Bridge",
+        ext.notify_persistent("srgb-scan", "SignalRGB Script Driver (beta)",
             "Rescanning... (" .. current .. "/" .. total .. ")")
     end)
     ext.dismiss_persistent("srgb-scan")
@@ -342,7 +343,7 @@ function P.on_scan_devices()
     end
 
     local matched = discovery.discover_and_register(script_db)
-    ext.notify("SignalRGB Bridge",
+    ext.notify("SignalRGB Script Driver (beta)",
         #script_db .. " scripts, " .. matched .. " new device(s)",
         matched > 0 and "success" or "info")
     emit_scripts_snapshot()
